@@ -1,6 +1,6 @@
 import { Controller, Get } from '@nestjs/common';
 
-@Controller('c*')
+@Controller('cats')
 export class CatsController {
   @Get()
   findAll(): string {
