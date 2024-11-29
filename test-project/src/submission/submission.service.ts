@@ -1,26 +1,39 @@
 import { Injectable } from '@nestjs/common';
-import { CreateSubmissionDto } from './dto/create-submission.dto';
-import { UpdateSubmissionDto } from './dto/update-submission.dto';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Repository } from 'typeorm';
+import { SubmissionItem } from './entities/submission.entity';
+import { SubmissionDto } from './dto/submission.dto';
 
 @Injectable()
-export class SubmissionService {
-  create(createSubmissionDto: CreateSubmissionDto) {
-    return 'This action adds a new submission';
+export class SubmissionItemService {
+  constructor(
+    @InjectRepository(SubmissionItem)
+    private submissionItemRepository: Repository<SubmissionItem>,
+  ) {}
+
+  // Alle SubmissionItems abrufen, nur ContentType und CreatedOn
+  async findAll(): Promise<SubmissionDto[]> {
+    const submissionItems = await this.submissionItemRepository.find({
+      select: ['ContentType', 'CreatedOn'],  // Nur ContentType und CreatedOn abrufen
+    });
+    return submissionItems.map(submissionItem => ({
+      ContentType: submissionItem.ContentType,
+      CreatedOn: submissionItem.CreatedOn,
+    }));
   }
 
-  findAll() {
-    return `This action returns all submission`;
-  }
-
-  findOne(id: number) {
-    return `This action returns a #${id} submission`;
-  }
-
-  update(id: number, updateSubmissionDto: UpdateSubmissionDto) {
-    return `This action updates a #${id} submission`;
-  }
-
-  remove(id: number) {
-    return `This action removes a #${id} submission`;
+  // Einzelnen SubmissionItem anhand der ID abrufen
+  async findOne(id: number): Promise<SubmissionDto> {
+    const submissionItem = await this.submissionItemRepository.findOne({
+      where: { Id: id },
+      select: ['ContentType', 'CreatedOn'],  // Nur ContentType und CreatedOn
+    });
+    if (!submissionItem) {
+      return null;  // Optional: Fehlerbehandlung, falls kein Eintrag gefunden wird
+    }
+    return {
+      ContentType: submissionItem.ContentType,
+      CreatedOn: submissionItem.CreatedOn,
+    };
   }
 }
