@@ -1,26 +1,49 @@
+// /workspace/workspace.service.ts
 import { Injectable } from '@nestjs/common';
-import { CreateWorkspaceDto } from './dto/create-workspace.dto';
-import { UpdateWorkspaceDto } from './dto/update-workspace.dto';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Repository } from 'typeorm';
+import { Workspace } from './entities/workspace.entity';
+import { WorkspaceDto } from './dto/workspace.dto';
 
 @Injectable()
 export class WorkspaceService {
-  create(createWorkspaceDto: CreateWorkspaceDto) {
-    return 'This action adds a new workspace';
+  constructor(
+    @InjectRepository(Workspace)
+    private workspaceRepository: Repository<Workspace>,
+  ) {}
+
+  // Alle Workspaces mit relevanten Feldern abrufen
+  async findAll(): Promise<WorkspaceDto[]> {
+    const workspaces = await this.workspaceRepository.find({
+      select: [
+        'Id', 'SubscriptionStatus', 
+      ]
+    });
+
+    return workspaces.map(workspace => ({
+      Id: workspace.Id,   
+      SubscriptionStatus: workspace.SubscriptionStatus,
+    }));
   }
 
-  findAll() {
-    return `This action returns all workspace`;
-  }
+  // Workspaces nach SubscriptionStatus gruppieren (Aktiv / Inaktiv)
+  async groupBySubscriptionStatus(): Promise<any> {
+    const workspaces = await this.findAll();
 
-  findOne(id: number) {
-    return `This action returns a #${id} workspace`;
-  }
+    const groupedData = {
+      active: 0,
+      inactive: 0
+    };
 
-  update(id: number, updateWorkspaceDto: UpdateWorkspaceDto) {
-    return `This action updates a #${id} workspace`;
-  }
+    workspaces.forEach(workspace => {
+      const status = workspace.SubscriptionStatus;
+      if (status === 'Active' || status === 'SessionPending') {
+        groupedData.active += 1;
+      } else if (status === 'Canceled' || status === 'Unpaid') {
+        groupedData.inactive += 1;
+      }
+    });
 
-  remove(id: number) {
-    return `This action removes a #${id} workspace`;
+    return groupedData;
   }
 }
