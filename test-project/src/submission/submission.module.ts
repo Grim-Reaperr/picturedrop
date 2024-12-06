@@ -6,7 +6,7 @@ import { SubmissionItem } from './entities/submission.entity';
 
 @Module({
   imports: [TypeOrmModule.forFeature([SubmissionItem])],
-  controllers: [SubmissionItemController],
   providers: [SubmissionItemService],
+  controllers: [SubmissionItemController],
 })
 export class SubmissionItemModule {}

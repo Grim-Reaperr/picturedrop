@@ -22,18 +22,40 @@ export class SubmissionItemService {
     }));
   }
 
-  // Einzelnen SubmissionItem anhand der ID abrufen
-  async findOne(id: number): Promise<SubmissionDto> {
-    const submissionItem = await this.submissionItemRepository.findOne({
-      where: { Id: id },
-      select: ['ContentType', 'CreatedOn'],  // Nur ContentType und CreatedOn
+  // Funktion zur Gruppierung der Daten nach Jahr und Monat
+  async groupByYearAndMonth(): Promise<any> {
+    const submissionItems = await this.findAll();
+    
+    // Daten gruppieren nach Jahr und Monat
+    const groupedData = {};
+
+    submissionItems.forEach(item => {
+      const createdOn = new Date(item.CreatedOn);
+      const year = createdOn.getFullYear();  // Jahr extrahieren
+      const month = createdOn.getMonth();   // Monat extrahieren (0 = Januar, 1 = Februar, etc.)
+
+      if (!groupedData[year]) {
+        groupedData[year] = {};
+      }
+
+      if (!groupedData[year][month]) {
+        groupedData[year][month] = { images: 0, videos: 0 };
+      }
+
+      // Zählen, ob es sich um ein Bild oder Video handelt
+      if (item.ContentType.includes('image')) {
+        groupedData[year][month].images += 1;
+      } else if (item.ContentType.includes('video')) {
+        groupedData[year][month].videos += 1;
+      }
     });
-    if (!submissionItem) {
-      return null;  // Optional: Fehlerbehandlung, falls kein Eintrag gefunden wird
-    }
-    return {
-      ContentType: submissionItem.ContentType,
-      CreatedOn: submissionItem.CreatedOn,
-    };
+
+    return groupedData;
+  }
+
+  // Filter nach Jahr und Monat
+  async filterByYear(year: number): Promise<any> {
+    const groupedData = await this.groupByYearAndMonth();
+    return groupedData[year] || {};
   }
 }
