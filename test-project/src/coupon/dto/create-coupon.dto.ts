@@ -1,1 +1,4 @@
-export class CreateCouponDto {}
+export class CreateCouponDto {
+    DescriptionEN: string;
+    CreatedOn: Date;
+}
