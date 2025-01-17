@@ -7,7 +7,7 @@ export class Workspace {
   Id: number;
 
   @Column()
-  Name: string;
+  Name: string; 
 
   @Column()
   NameEn: string;
