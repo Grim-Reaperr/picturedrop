@@ -7,6 +7,7 @@ import { Workspace} from './workspace/entities/workspace.entity';
 import { SubmissionItemModule } from './submission/submission.module';
 import { SubmissionItem} from './submission/entities/submission.entity'
 import { VoucherModule } from './vouchers/vouchers.module';
+import { Voucher } from './vouchers/entities/voucher.entity';
 
 
 @Module({
@@ -18,7 +19,7 @@ import { VoucherModule } from './vouchers/vouchers.module';
       username: 'myuser',
       password: 'mypassword',
       database: 'mydb',
-      entities: [SubmissionItem,Workspace],
+      entities: [SubmissionItem,Workspace,Voucher],
       synchronize: false,
       
     }),
