@@ -11,4 +11,5 @@ export const routes: Routes = [
   {path: 'workspace', component: WorkspaceComponent},
   {path:'uploads', component: UploadsComponent},
   {path:'coupons', component: CouponsComponent},
+  {path: '**', redirectTo: 'home', pathMatch: 'full'}
 ];
