@@ -1,0 +1,48 @@
+.start_23-921 {
+  position: relative;
+  box-sizing: border-box;
+  overflow: hidden;
+  background: #dcdcdc;
+  width: 100vw;
+  height: 100vh;
+}
+.frame-7_23-1196 {
+  top: 675px;
+  left: 651px;
+  position: absolute;
+  display: flex;
+  box-sizing: border-box;
+  width: 150px;
+  height: 61px;
+}
+.rectangle-2_23-1197 {
+  top: 0px;
+  left: 0px;
+  position: absolute;
+  display: flex;
+  display: flex;
+}
+
+.text-login_23-1198 {
+  top: 9px;
+  left: 19px;
+  position: absolute;
+  display: flex;
+  color: #ffffff;
+  font-size: 32px;
+  font-family: Inter;
+  /*letter-spacing: 0%;*/
+  text-decoration: none;
+  font-weight: 400;
+  text-align: left;
+  width: 111px;
+  height: 43px;
+}
+
+.administrator-1_33-1188 {
+  top: -2px;
+  left: 477px;
+  position: absolute;
+  display: flex;
+  display: flex;
+}
