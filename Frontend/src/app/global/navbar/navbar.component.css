@@ -1,5 +1,5 @@
 .topbar {
-  width: 100%;
+  width: 98.5%;
   height: 15vh;
   background-color: rgb(104, 50, 204);
   border-radius: 15px;
@@ -20,4 +20,7 @@
   border: none;
   color: white;
   margin-right: 10px; /* Adds space between buttons */
+}
+:hover.barbutton {
+  cursor: pointer;
 }
