@@ -1,0 +1,135 @@
+/* Grundcontainer */
+.coupons-container {
+  max-width: 720px;
+  margin: 40px auto;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+/* Überschrift */
+.header {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: #2c3e50;
+}
+
+/* Statistik-Karten */
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 20px;
+}
+
+/* Einzelne Karte */
+.stat-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgb(0 0 0 / 0.1);
+  padding: 25px 35px;
+  width: 200px;
+  text-align: center;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.stat-card.active {
+  border-color: #3498db;
+  background-color: #ecf5fc;
+}
+
+.stat-label {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #555;
+}
+
+.stat-value {
+  font-size: 2.5rem;
+  font-weight: 800;
+}
+
+.stat-card.redeemed .stat-value {
+  color: #27ae60;
+}
+
+.stat-card.available .stat-value {
+  color: #e67e22;
+}
+
+/* Reset-Button */
+.reset-filter {
+  display: block;
+  margin: 0 auto 30px auto;
+  padding: 8px 14px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.reset-filter:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+/* Coupon-Liste */
+.coupon-list {
+  background: #f7f9fc;
+  border-radius: 12px;
+  padding: 20px 30px;
+  box-shadow: inset 0 0 10px rgb(0 0 0 / 0.05);
+}
+
+.coupon-list ul {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 15px;
+}
+
+.coupon-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 15px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  background: white;
+  box-shadow: 0 1px 4px rgb(0 0 0 / 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.coupon-list li:hover {
+  background-color: #e1f5fe;
+}
+
+.coupon-list li.redeemed {
+  background-color: #d4edda;
+  color: #155724;
+  font-weight: 600;
+}
+
+.coupon-id {
+  font-weight: 700;
+}
+
+.coupon-status {
+  font-style: italic;
+  font-weight: 600;
+  color: #7f8c8d;
+}
+
+.coupon-list li.redeemed .coupon-status {
+  color: #2c662d;
+}

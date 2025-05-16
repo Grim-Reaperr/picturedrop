@@ -1,1 +1,40 @@
-<div>hello vouchers</div>
+<div class="coupons-container">
+  <h2 class="header">Alle Verfügbaren Coupons</h2>
+
+  <div class="stats">
+    <div
+      class="stat-card redeemed"
+      [class.active]="filter === 'validated'"
+      (click)="setFilter('validated')"
+    >
+      <div class="stat-label">Eingelöste Coupons</div>
+      <div class="stat-value">{{ validatedCount }}</div>
+    </div>
+
+    <div
+      class="stat-card available"
+      [class.active]="filter === 'available'"
+      (click)="setFilter('available')"
+    >
+      <div class="stat-label">Verfügbare Coupons</div>
+      <div class="stat-value">{{ availableCount }}</div>
+    </div>
+  </div>
+
+  <button (click)="setFilter('all')" class="reset-filter" [class.active]="filter === 'all'">
+    Alle anzeigen
+  </button>
+
+  <section class="coupon-list">
+    <h3>Coupon-Liste:</h3>
+    <ul *ngIf="filteredCoupons.length; else noCoupons">
+      <li *ngFor="let coupon of filteredCoupons" [class.redeemed]="coupon.ValidatedOn">
+        <span class="coupon-id">ID: {{ coupon.Id }}</span>
+        <span class="coupon-status">{{ coupon.ValidatedOn ? 'Eingelöst' : 'Verfügbar' }}</span>
+      </li>
+    </ul>
+    <ng-template #noCoupons>
+      <p>Keine Coupons in dieser Kategorie.</p>
+    </ng-template>
+  </section>
+</div>
