@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 interface Coupon {
@@ -11,13 +11,14 @@ interface Coupon {
 @Component({
   selector: 'app-coupons',
   standalone: true,
-  imports: [CommonModule, HttpClientModule],
+  imports: [CommonModule],
   templateUrl: './coupons.component.html',
   styleUrls: ['./coupons.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CouponsComponent implements OnInit {
-  private http = inject(HttpClient);
+  constructor(private http: HttpClient) {
+  }
   coupons$: Observable<Coupon[]> | null = null;
 
   validatedCount = 0;
