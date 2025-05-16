@@ -24,3 +24,8 @@
 :hover.barbutton {
   cursor: pointer;
 }
+.rightside {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
