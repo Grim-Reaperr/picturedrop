@@ -10,46 +10,17 @@ import {Chart} from 'chart.js/auto';
 })
 export class UploadsComponent implements OnInit {
 
-  public BarChart: any;
-  chartData: ChartData<'bar'> = {
-    labels: [],
-    datasets: [
-      {
-        label: 'Bilder',
-        data: [2, 2, 2],
-        backgroundColor: '#4e73df',
-        borderColor: '#4e73df',
-        borderWidth: 1,
-      },
-      {
-        label: 'Videos',
-        data: [2, 3, 4],
-        backgroundColor: '#1cc88a',
-        borderColor: '#1cc88a',
-        borderWidth: 1,
-      },
-    ],
-  };
 
-  chartOptions: ChartOptions = {
-    responsive: true,
-    scales: {
-      x: {
-        beginAtZero: true
-      },
-      y: {
-        beginAtZero: true
-      },
-    },
-  };
+
+
 
   constructor(private http: HttpClient) {
   }
 
-  ngOnInit(): void {
+  public chart: any;
 
-    this.fetchSubmissionItems();
-    this.BarChart = new Chart('BarChart', {type: 'bar', data: this.chartData, options: this.chartOptions});
+  ngOnInit(): void {
+    this.fetchSubmissionItems(); // Nur Daten laden
   }
 
   fetchSubmissionItems(): void {
@@ -58,7 +29,7 @@ export class UploadsComponent implements OnInit {
     }>('api/submission-items/grouped-data')
       .subscribe((groupedData) => {
         console.log(groupedData);
-        this.formatChartData(groupedData);
+        this.formatChartData(groupedData); // Chart wird dort erstellt
       });
   }
 
@@ -75,9 +46,60 @@ export class UploadsComponent implements OnInit {
         videosData.push(groupedData[year][month].videos);
       });
     });
-
-    this.chartData.labels = labels;
-    this.chartData.datasets[0].data = imagesData;
-    this.chartData.datasets[1].data = videosData;
+  console.log("labels")
+    console.log(labels)
+    console.log("imagesData")
+    console.log(imagesData)
+    console.log("videosData")
+    console.log(videosData)
+    this.createChart(labels, imagesData, videosData);
   }
+
+  createChart(labels: string[], imagesData: number[], videosData: number[]): void {
+    this.chart = new Chart("MyChart", {
+      type: 'bar',
+      data: {
+        labels: labels,
+        datasets: [
+          {
+            label: "Fotos",
+            data: imagesData,
+            backgroundColor: 'lightblue'
+          },
+          {
+            label: "Videos",
+            data: videosData,
+            backgroundColor: 'orange'
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            position: 'top',
+          },
+          title: {
+            display: true,
+            text: 'Uploads'
+          }
+        },
+        scales: {
+          x: {
+            title: {
+              display: true,
+              text: 'Monat'
+            }
+          },
+          y: {
+            title: {
+              display: true,
+              text: 'Anzahl'
+            }
+          }
+        }
+      }
+    });
+  }
+
 }

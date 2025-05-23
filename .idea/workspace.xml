@@ -5,11 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d9583426-5a42-48bd-ae96-03dae72f4a31" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Frontend/src/app/Guard/customGuard.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/test-project/src/workspace/workspace.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/test-project/src/workspace/workspace.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/src/app/workspace/workspace.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/app/workspace/workspace.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/src/app/workspace/workspace.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/app/workspace/workspace.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/src/app/workspace/workspace.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/app/workspace/workspace.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/test-project/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/test-project/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/test-project/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/test-project/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/test-project/src/app.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/test-project/src/app.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/test-project/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/test-project/src/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/test-project/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/test-project/src/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/test-project/src/submission/submission.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/test-project/src/submission/submission.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/test-project/src/test/test.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/test-project/src/test/test.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/test-project/src/vouchers/vouchers.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/test-project/src/vouchers/vouchers.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/test-project/src/workspace/workspace.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/test-project/src/workspace/workspace.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/src/app/app.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/app/app.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/src/app/app.routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/app/app.routes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/src/app/global/navbar/navbar.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/app/global/navbar/navbar.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/src/app/global/navbar/navbar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/app/global/navbar/navbar.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/src/app/global/navbar/navbar.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/app/global/navbar/navbar.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/src/app/home/home.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/app/home/home.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/src/app/home/home.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/app/home/home.component.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,19 +72,26 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/43650/Documents/HTL/Wmc/4.Klasse wmc/picturedrop",
+    "last_opened_file_path": "C:/Users/43650/Documents/HTL/Wmc/4.Klasse wmc/picturedrop/Frontend/src/app/Guard",
     "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "npm.start.executor": "Run",
-    "prettierjs.PrettierConfiguration.Package": "C:\\Users\\NB-Florian\\Documents\\Schule\\WMC\\picturedrop\\Backend\\test-project\\node_modules\\prettier",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "ts.external.directory.path": "C:\\Users\\NB-Florian\\Documents\\Schule\\WMC\\picturedrop\\Backend\\test-project\\node_modules\\typescript\\lib",
+    "prettierjs.PrettierConfiguration.Package": "C:\\Users\\43650\\Documents\\HTL\\Wmc\\4.Klasse wmc\\picturedrop\\Backend\\test-project\\node_modules\\prettier",
+    "settings.editor.selected.configurable": "settings.javascript.linters.eslint",
+    "ts.external.directory.path": "C:\\Users\\43650\\Documents\\HTL\\Wmc\\4.Klasse wmc\\picturedrop\\Frontend\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\43650\Documents\HTL\Wmc\4.Klasse wmc\picturedrop\Frontend\src\app\Guard" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/Frontend/package.json" />
@@ -102,14 +125,9 @@
       <workItem from="1743765522501" duration="5979000" />
       <workItem from="1744350495726" duration="4943000" />
       <workItem from="1744370347090" duration="1735000" />
-      <workItem from="1745567320687" duration="595000" />
-      <workItem from="1745578008096" duration="2817000" />
-      <workItem from="1745586915724" duration="705000" />
-      <workItem from="1746790005273" duration="1047000" />
-      <workItem from="1746791065256" duration="17000" />
-      <workItem from="1746791090726" duration="673000" />
-      <workItem from="1746792846775" duration="612000" />
-      <workItem from="1747394421734" duration="4208000" />
+      <workItem from="1747394672672" duration="703000" />
+      <workItem from="1747395389713" duration="2873000" />
+      <workItem from="1747398689361" duration="2447000" />
     </task>
     <servers />
   </component>
