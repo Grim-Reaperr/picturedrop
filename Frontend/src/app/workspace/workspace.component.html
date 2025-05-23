@@ -5,21 +5,22 @@
   </div>
 
   <div class="tab-switcher">
-    <button (click)="switchStatus('active')" [class.active]="currentStatus === 'active'">Active</button>
-    <button (click)="switchStatus('inactive')" [class.active]="currentStatus === 'inactive'">Inactive</button>
+    <button (click)="switchStatus('active')" [class.active]="currentStatus === 'active'">Aktiv</button>
+    <button (click)="switchStatus('inactive')" [class.active]="currentStatus === 'inactive'">Inaktiv</button>
   </div>
 
   <div class="upload-counter">
     <span>{{ currentStatus === 'active' ? 'Aktive Arbeitsbereiche' : 'Inaktive Arbeitsbereiche' }}</span>
     <div class="upload-count-box">
-      <h2>{{ currentStatus === 'active' ? groupedCounts.active : groupedCounts.inactive }}</h2>
+      <h2>{{ filteredWorkspaces.length }}</h2>
     </div>
   </div>
+
 
   <div class="workspace-list">
     <div class="workspace-card" *ngFor="let workspace of filteredWorkspaces">
       <div class="workspace-icon">🗂️</div>
-      <div>
+      <div class="workspace-details">
         <p><strong>ID:</strong> {{ workspace.Id }}</p>
         <p><strong>Status:</strong> {{ workspace.SubscriptionStatus }}</p>
       </div>
