@@ -1,1 +1,24 @@
-<div> hallo 2</div>
+<div class="container">
+  <h1>Arbeitsbereiche</h1>
+  <p>Anzeige aller verfügbaren Arbeitsbereiche</p>
+
+  <div>
+    <button (click)="switchStatus('active')" [disabled]="currentStatus === 'active'">Active</button>
+    <button (click)="switchStatus('inactive')" [disabled]="currentStatus === 'inactive'">Inactive</button>
+  </div>
+
+  <div class="upload-count">
+    <div class="count-box">
+      <p>{{ currentStatus === 'active' ? 'Aktive Arbeitsbereiche' : 'Inaktive Arbeitsbereiche' }}</p>
+      <h2>{{ currentStatus === 'active' ? groupedCounts.active : groupedCounts.inactive }}</h2>
+    </div>
+  </div>
+
+  <div class="workspace-list">
+    <div class="workspace-card" *ngFor="let workspace of filteredWorkspaces">
+      <p><strong>Workspace ID:</strong> {{ workspace.Id }}</p>
+      <p><strong>Status:</strong> {{ workspace.SubscriptionStatus }}</p>
+      <p><strong>Anzahl Uploads:</strong> 12</p> <!-- Optional: Platzhalter -->
+    </div>
+  </div>
+</div>
