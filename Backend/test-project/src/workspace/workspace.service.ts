@@ -26,6 +26,17 @@ export class WorkspaceService {
     }));
   }
 
+sumFunction(a: number, b: number): number {
+  if (isNaN(a) || isNaN(b)) {
+    throw new Error('Nan is not a number');
+  }
+  
+    return a + b;
+  
+    
+  }
+
+
   // Workspaces nach SubscriptionStatus gruppieren (Aktiv / Inaktiv)
   async groupBySubscriptionStatus(): Promise<any> {
     const workspaces = await this.findAll();
